@@ -9,11 +9,16 @@ app.set('view engine', 'ejs');                                          // ejs p
 app.use(express.static('public'));                                      // client js code directory
 app.use(express.urlencoded({ extended: true }));                        // to use urlencoded parameters
 
-const rooms = {};
+const rooms = { name: {} };
 app.get('/', (req, res) => {
     res.render('index', { rooms: rooms });
 })
 
+app.get('/:room', (req, res) => {                                       // parameter in url, for room
+    res.render('room', { roomName: req.params.room });
+});
+
+server.listen(3000);                                                    // listening on port 3000
 
 /**
  * In room operations
