@@ -1,49 +1,56 @@
 const express = require('express');
 const app = express();
-const server = require('http').Server(app);
 
+const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-app.set('views', './views');                                            // html/ejs directory
-app.set('view engine', 'ejs');                                          // ejs platform
-app.use(express.static('public'));                                      // client js code directory
-app.use(express.urlencoded({ extended: true }));                        // to use urlencoded parameters
+app.set('views', './views');
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
 const rooms = {};
 
-app.get('/', (req, res) => {
-    res.render('index', { rooms: rooms });
-})
+app.route('/')
+    .get((req, res) => {
+        res.render('index', { rooms: rooms });
+    });
 
-app.post('/room', (req, res) => {
-    if(rooms[req.body.room] != null) {                                  // if the room already exists
-        return res.redirect('/');
-    }
-    rooms[req.body.room] = { users: {} };
-    res.redirect(req.body.room);
-    // Send message that new room was created
-    io.emit('room-created', req.body.room);
+app.route('/room')
+    .post((req, res) => {
+        // if the room already exists
+        if(rooms[req.body.room] != null) {
+            return res.redirect('/');
+        }
+        rooms[req.body.room] = { users: {} };
+        res.redirect(req.body.room);
+        // Send message that new room was created
+        io.emit('room-created', req.body.room);
+    });
+
+app.route('/:room')
+    .get((req, res) => {
+        // parameter in url, for room
+        if(rooms[req.params.room] == null) {
+            return res.redirect('/');
+        }
+        res.render('room', { roomName: req.params.room });
+    });
+
+server.listen(3000, () => {
+    console.log("Server running on port 3000");
 });
 
-app.get('/:room', (req, res) => {                                       // parameter in url, for room
-    if(rooms[req.params.room] == null) {
-        return res.redirect('/');
-    }
-    res.render('room', { roomName: req.params.room });
-});
-
-server.listen(3000);                                                    // listening on port 3000
-
-/**
- * In room operations
- */
+///////////////////////// In room operations /////////////////////////
 
 io.on('connection', socket => {
 
     socket.on('new-user', (room, name) => {
         socket.join(room);
-        rooms[room].users[socket.id] = name;                            // assign name to socket id
-        socket.to(room).broadcast.emit('user-connected', name);         // broadcasting text to all except self
+        // assign name to socket id
+        rooms[room].users[socket.id] = name;
+        // broadcasting text to all except self
+        socket.to(room).broadcast.emit('user-connected', name);
         // console.log(name+' joined');
     })
 
@@ -60,7 +67,6 @@ io.on('connection', socket => {
         });
     })
 });
-
 
 function getUserRooms(socket) {
     /**
