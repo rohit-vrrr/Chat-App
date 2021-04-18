@@ -8,7 +8,8 @@
 
 body {
     color: white;
-    background: #50a3a2;
+    background-color: #000000;
+    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
     width: 100%;
     height: 100%;
     padding: 0;
@@ -23,7 +24,7 @@ button {
     background-color: white;
     border: 0;
     padding: 10px 15px;
-    color: #50a3a2;
+    color: black;
     border-radius: 3px;
     width: 250px;
     font-size: 18px;
@@ -71,10 +72,10 @@ footer p {
     font-style: italic;
     font-size: 3.5rem;
     width: 250px;
-    transform: rotate(3deg);
+    transform: rotate(4deg);
     padding: 0.2rem 1.2rem;
     border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
-    background-color: #fdcb6e;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Create new room input */
@@ -117,7 +118,7 @@ footer p {
 }
 .join-room:hover {
     background-color: white;
-    color: #50a3a2;
+    color: black;
 
 }
 
