@@ -83,14 +83,12 @@ footer p {
     background-color: rgba(252, 252, 252, 0.2);
     width: 250px;
     border-radius: 3px;
-    font-family: 'Source Sans Pro', sans-serif;
     padding: 10px 15px;
     margin: 0 auto 10px auto;
     display: block;
     text-align: center;
     font-size: 18px;
     color: white;
-    font-weight: 400;
 }
 
 /* Join room container */
@@ -110,14 +108,12 @@ footer p {
     background-color: rgba(252, 252, 252, 0.2);
     width: 150px;
     border-radius: 3px;
-    font-family: 'Source Sans Pro', sans-serif;
     padding: 10px 15px;
     margin: 0 auto 10px auto;
     display: block;
     text-align: center;
     font-size: 18px;
     color: white;
-    font-weight: 400;
 }
 .join-room:hover {
     background-color: white;
@@ -134,7 +130,6 @@ footer p {
 /************************* Chat Room Page *************************/
 /* Message view container */
 #message-container {
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
     width: 80%;
     max-width: 1200px;
@@ -168,13 +163,11 @@ footer p {
     background-color: rgba(252, 252, 252, 0.2);
     width: 250px;
     border-radius: 5px;
-    font-family: 'Source Sans Pro', sans-serif;
     padding: 10px 15px;
     margin: 0 auto 10px auto;
     display: block;
     font-size: 20px;
     color: white;
-    font-weight: 400;
 }
 
 /* Message send button */
@@ -182,7 +175,5 @@ footer p {
     width: 250px;
     padding: 10px;
     margin-bottom: 10px;
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
-    font-weight: 400;
 }
