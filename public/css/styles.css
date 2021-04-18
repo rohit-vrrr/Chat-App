@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+
+body {
+    color: white;
+    background: #50a3a2;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    appearance: none;
+    outline: 0;
+    background-color: white;
+    border: 0;
+    padding: 10px 15px;
+    color: #50a3a2;
+    border-radius: 3px;
+    width: 250px;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #D3D3D3;
+}
+
+footer {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+}
+  
+footer p {
+    color: #ccc;
+}
+
+/************************* Home Page *************************/
+/* Whole Container */
+.container {
+    margin: auto;
+    padding: 50px 0;
+    text-align: center;
+}
+.container h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+/* Heading */
+.container .heading {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3.125rem;
+}
+.container .heading h1 {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 3.5rem;
+    width: 250px;
+    transform: rotate(3deg);
+    padding: 0.2rem 1.2rem;
+    border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+    background-color: #fdcb6e;
+}
+
+/* Create new room input */
+.new-room {
+    border: 1px solid rgba(252, 252, 252, 0.4);
+    background-color: rgba(252, 252, 252, 0.2);
+    width: 250px;
+    border-radius: 3px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+}
+
+/* Join room container */
+#room-container {
+    font-size: 25px;
+    margin-top: 50px;
+    padding:4px;
+    width: 1000px;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Join room input */
+.join-room {
+    border: 1px solid rgba(252, 252, 252, 0.4);
+    background-color: rgba(252, 252, 252, 0.2);
+    width: 150px;
+    border-radius: 3px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+}
+.join-room:hover {
+    background-color: white;
+    color: #50a3a2;
+
+}
+
+/* Join room scroll invisibility */
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}

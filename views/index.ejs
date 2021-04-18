@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>String</title>
-    <link rel="icon" href="favicon.ico">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link 
-        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,600&display=swap" 
-        rel="stylesheet">
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <!-- Scripts -->
-    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
-    <script defer src="script.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>String</title>
+        <link rel="icon" href="favicon.ico">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link 
+            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,600&display=swap" 
+            rel="stylesheet">
+        <!-- CSS Stylesheet -->
+        <link rel="stylesheet" href="/css/styles.css">
+        <!-- Scripts -->
+        <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script defer src="script.js"></script>
+    </head>
 
-<body>
+    <body>
 
-    <div class="container">
-        <div class="heading">
-            <h1>String</h1>
-        </div>
-        <h1>New Room</h1>
-        <form action="/room" method="POST">
-            <input name="room" type="text" autocomplete="off" required>
-            <button type="submit">Create</button>
-        </form>
-        <div id="room-container">
-            <h1>Join Room:</h1>
-            <% Object.keys(rooms).forEach(room => { %>
-            <%= room %>
-            <form action="/<%= room %>">
-                <input class="join-room" type="submit" value="Join">
+        <div class="container">
+            <div class="heading">
+                <h1>String</h1>
+            </div>
+            <h1>New Room</h1>
+            <form action="/room" method="POST">
+                <input class="new-room" name="room" type="text" autocomplete="off" required>
+                <button type="submit">Create</button>
             </form>
-            <% }) %>
+            <div id="room-container">
+                <h1>Join Room:</h1>
+                <% Object.keys(rooms).forEach(room => { %>
+                <%= room %>
+                <form action="/<%= room %>">
+                    <input class="join-room" type="submit" value="Join">
+                </form>
+                <% }) %>
+            </div>
         </div>
-    </div>
 
-</body>
+    </body>
+
+    <footer>
+        <p>Copyright ⓒ 2021</p>
+    </footer>
 
 </html>
