@@ -132,3 +132,57 @@ footer p {
 }
 
 /************************* Chat Room Page *************************/
+/* Message view container */
+#message-container {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    width: 80%;
+    max-width: 1200px;
+    height: 35rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#message-container div {
+    background-color: rgba(211, 211, 211, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+}
+#message-container div:nth-child(2n) {
+    background-color: rgba(169, 169, 169, 0.5);
+}
+
+/* Message send container */
+#send-container {
+    position: fixed;
+    padding-bottom: 30px;
+    bottom: 0;
+    max-width: 1200px;
+    width: 80%;
+    display: flex;
+}
+
+/* Message text box */
+#message-input {
+    flex-grow: 1;
+    border: 1px solid rgba(252, 252, 252, 0.4);
+    background-color: rgba(252, 252, 252, 0.2);
+    width: 250px;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+}
+
+/* Message send button */
+#send-button {
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
